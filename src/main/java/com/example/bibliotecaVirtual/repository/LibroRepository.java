@@ -19,10 +19,10 @@ public interface LibroRepository extends MongoRepository <Libro, Long> {
 	public Optional<Libro> findById(Long id);
 	
 	@Query("{titulo: '?0'}")
-	public List<Libro> findByTitulo(String titulo);
+	public Optional<Libro> findByTitulo(String titulo);
 	
 	@Query("{autor: '?0'}")
-	public List<Libro> findByAutor(String autor);
+	public Optional<Libro> findByAutor(String autor);
 	
 	@Query("{editorial: '?0'}")
 	public List<Libro> findByEditorial(String editorial);
