@@ -17,24 +17,4 @@ public interface LibroServices {
 	
 	public String eliminarLibro(Long id);
 	
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
