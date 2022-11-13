@@ -1,20 +1,20 @@
 package com.example.bibliotecaVirtual.model;
 
-import java.util.Date;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
+@Document("book")
 public class Libro {
 	@Id
 	private Long id;
 	private String titulo;
 	private String autor;
 	private String editorial;
-	private Date fechaPublicacion;
+	private Integer fechaPublicacion;
 	private String tipo;
+	private Long idUsuario;
 	
 	public Libro() {
 
@@ -52,11 +52,11 @@ public class Libro {
 		this.editorial = editorial;
 	}
 
-	public Date getFechaPublicacion() {
+	public Integer getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicacion(Date fechaPublicacion) {
+	public void setFechaPublicacion(Integer fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 
@@ -67,10 +67,18 @@ public class Libro {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+	
+	public Long getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Long idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(autor, editorial, fechaPublicacion, id, tipo, titulo);
+		return Objects.hash(autor, editorial, fechaPublicacion, id, idUsuario, tipo, titulo);
 	}
 
 	@Override
@@ -84,14 +92,18 @@ public class Libro {
 		Libro other = (Libro) obj;
 		return Objects.equals(autor, other.autor) && Objects.equals(editorial, other.editorial)
 				&& Objects.equals(fechaPublicacion, other.fechaPublicacion) && Objects.equals(id, other.id)
-				&& Objects.equals(tipo, other.tipo) && Objects.equals(titulo, other.titulo);
+				&& Objects.equals(idUsuario, other.idUsuario) && Objects.equals(tipo, other.tipo)
+				&& Objects.equals(titulo, other.titulo);
 	}
 
 	@Override
 	public String toString() {
 		return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", editorial=" + editorial
-				+ ", fechaPublicacion=" + fechaPublicacion + ", tipo=" + tipo + "]";
+				+ ", fechaPublicacion=" + fechaPublicacion + ", tipo=" + tipo + ", idUsuario=" + idUsuario + "]";
 	}
+	
+	
+
 	
 	
 	
