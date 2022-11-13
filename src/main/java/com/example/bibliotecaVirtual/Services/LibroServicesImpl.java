@@ -8,7 +8,37 @@ import com.example.bibliotecaVirtual.model.Libro;
 public class LibroServicesImpl implements LibroServices {
 
 	@Override
-	public Optional<Libro> buscarLibro(Long id, String autor, String editorial, String tipo) {
+	public Optional<Libro> buscarLibroNoAnyo(Long id, String titulo, String autor, String editorial, String tipo) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Libro> buscarPorId(Long id) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Libro> buscarPorTitulo(String titulo) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Libro> buscarPorAutor(String autor) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Libro> buscarPorEditorial(String editorial) {
+		// TODO Auto-generated method stub
+		return Optional.empty();
+	}
+
+	@Override
+	public Optional<Libro> buscarPorTipo(String tipo) {
 		// TODO Auto-generated method stub
 		return Optional.empty();
 	}

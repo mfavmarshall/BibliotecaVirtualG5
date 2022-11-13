@@ -7,7 +7,17 @@ import com.example.bibliotecaVirtual.model.Libro;
 
 public interface LibroServices {
 	
-	public Optional<Libro> buscarLibro(Long id, String autor, String editorial, String tipo);
+	public Optional<Libro> buscarLibroNoAnyo(Long id, String titulo, String autor, String editorial, String tipo);
+	
+	public Optional<Libro> buscarPorId(Long id);
+	
+	public Optional<Libro> buscarPorTitulo(String titulo);
+
+	public Optional<Libro> buscarPorAutor(String autor);
+	
+	public Optional<Libro> buscarPorEditorial(String editorial);
+	
+	public Optional<Libro> buscarPorTipo(String tipo);
 	
 	public List<Libro> buscarTodos();
 	
