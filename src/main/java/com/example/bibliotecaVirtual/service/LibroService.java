@@ -11,7 +11,7 @@ public interface LibroService {
 	public List<Libro> consultarPorTitulo(String titulo);
 	public List<Libro> consultarPorAutor(String autor);
 	public List<Libro> consultarPorEditorial(String editorial);
-	public List<Libro> consultarPorFechaPublicacion(Integer fechaPublicacion);
+	public List<Libro> consultarPorFechaPublicacion(String fechaPublicacion);
 	public List<Libro> consultarPorTipo(String tipo);
 	public Libro crearLibro(Libro libro);
 	public Libro actualizarLibro (Libro libro);

@@ -22,7 +22,7 @@ public interface LibroRepository extends MongoRepository <Libro, Long> {
 	public List<Libro> consultarPorEditorial(String editorial);
 	
 	@Query("{fechaPublicacion:'?0'}")
-	public List<Libro> consultarPorFechaPublicacion(Integer fechaPublicacion);
+	public List<Libro> consultarPorFechaPublicacion(String fechaPublicacion);
 	
 	@Query("{tipo:'?0'}")
 	public List<Libro> consultarPorTipo(String tipo);

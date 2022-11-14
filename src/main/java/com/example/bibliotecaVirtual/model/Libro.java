@@ -12,7 +12,7 @@ public class Libro {
 	private String titulo;
 	private String autor;
 	private String editorial;
-	private Integer fechaPublicacion;
+	private String fechaPublicacion;
 	private String tipo;
 	private Long idUsuario;
 	
@@ -52,11 +52,11 @@ public class Libro {
 		this.editorial = editorial;
 	}
 
-	public Integer getFechaPublicacion() {
+	public String getFechaPublicacion() {
 		return fechaPublicacion;
 	}
 
-	public void setFechaPublicacion(Integer fechaPublicacion) {
+	public void setFechaPublicacion(String fechaPublicacion) {
 		this.fechaPublicacion = fechaPublicacion;
 	}
 

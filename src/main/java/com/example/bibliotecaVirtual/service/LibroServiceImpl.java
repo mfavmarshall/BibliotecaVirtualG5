@@ -41,7 +41,7 @@ public class LibroServiceImpl implements LibroService {
 	}
 
 	@Override
-	public List<Libro> consultarPorFechaPublicacion(Integer fechaPublicacion) {
+	public List<Libro> consultarPorFechaPublicacion(String fechaPublicacion) {
 		return libroRepository.consultarPorFechaPublicacion(fechaPublicacion);
 	}
 

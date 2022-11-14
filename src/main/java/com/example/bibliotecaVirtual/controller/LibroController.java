@@ -53,7 +53,7 @@ public class LibroController {
 		
 	}
 	@GetMapping("/fechaPublicacion/{fechaPublicacion}")
-	public ResponseEntity<?> buscarPorFechaPublicacion(@PathVariable Integer fechaPublicacion){
+	public ResponseEntity<?> buscarPorFechaPublicacion(@PathVariable String fechaPublicacion){
 		return ResponseEntity.ok(libroService.consultarPorFechaPublicacion(fechaPublicacion));
 		
 	}
