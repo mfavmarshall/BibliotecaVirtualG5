@@ -2,10 +2,12 @@ package com.example.bibliotecaVirtual.model;
 
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Usuario {
+	@Id
 	private Long idUsuario;
 	private String nombreUsuario;
 	private String correoUsuario;
@@ -70,7 +72,6 @@ public class Usuario {
 		return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", correoUsuario="
 				+ correoUsuario + ", contraseñaUsuario=" + contraseñaUsuario + "]";
 	}
-
 	
 	
 }
