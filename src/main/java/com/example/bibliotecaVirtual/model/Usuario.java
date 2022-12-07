@@ -7,21 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Usuario {
+	
 	@Id
-	private Long idUsuario;
 	private String nombreUsuario;
 	private String correoUsuario;
-	private String contraseñaUsuario;
+	private String contrasenaUsuario;
 	
 	public Usuario() {
-	}
-
-	public Long getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(Long idUsuario) {
-		this.idUsuario = idUsuario;
 	}
 
 	public String getNombreUsuario() {
@@ -40,17 +32,17 @@ public class Usuario {
 		this.correoUsuario = correoUsuario;
 	}
 
-	public String getContraseñaUsuario() {
-		return contraseñaUsuario;
+	public String getContrasenaUsuario() {
+		return contrasenaUsuario;
 	}
 
-	public void setContraseñaUsuario(String contraseñaUsuario) {
-		this.contraseñaUsuario = contraseñaUsuario;
+	public void setContrasenaUsuario(String contrasenaUsuario) {
+		this.contrasenaUsuario = contrasenaUsuario;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(contraseñaUsuario, correoUsuario, idUsuario, nombreUsuario);
+		return Objects.hash(contrasenaUsuario, correoUsuario, nombreUsuario);
 	}
 
 	@Override
@@ -62,16 +54,15 @@ public class Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Usuario other = (Usuario) obj;
-		return Objects.equals(contraseñaUsuario, other.contraseñaUsuario)
-				&& Objects.equals(correoUsuario, other.correoUsuario) && Objects.equals(idUsuario, other.idUsuario)
+		return Objects.equals(contrasenaUsuario, other.contrasenaUsuario)
+				&& Objects.equals(correoUsuario, other.correoUsuario)
 				&& Objects.equals(nombreUsuario, other.nombreUsuario);
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [idUsuario=" + idUsuario + ", nombreUsuario=" + nombreUsuario + ", correoUsuario="
-				+ correoUsuario + ", contraseñaUsuario=" + contraseñaUsuario + "]";
+		return "Usuario [nombreUsuario=" + nombreUsuario + ", correoUsuario=" + correoUsuario + ", contrasenaUsuario="
+				+ contrasenaUsuario + "]";
 	}
-	
-	
+
 }

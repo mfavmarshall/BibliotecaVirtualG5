@@ -31,7 +31,7 @@ public class UsuarioController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> consultarUsuarioPorId (@PathVariable Long id){
+	public ResponseEntity<?> consultarUsuarioPorId (@PathVariable String id){
 		Optional<Usuario> usuario = usuarioService.consultarUsuarioPorId(id);
 		if(!usuario.isPresent()) {
 			return ResponseEntity.notFound().build();
@@ -45,18 +45,18 @@ public class UsuarioController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> actualizarUsuario (@RequestBody Usuario usuarioDetalle, @PathVariable Long id){
+	public ResponseEntity<?> actualizarUsuario (@RequestBody Usuario usuarioDetalle, @PathVariable String id){
 		Optional<Usuario> usuario = usuarioService.consultarUsuarioPorId(id);
 		if(!usuario.isPresent()) {
 			return ResponseEntity.notFound().build();
 		}
 		BeanUtils.copyProperties(usuarioDetalle, usuario.get());
-		usuario.get().setIdUsuario(id);
+		usuario.get().setNombreUsuario(id);
 		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.actualizarUsuario(usuario.get()));
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> eliminarUsuario (@PathVariable Long id){
+	public ResponseEntity<?> eliminarUsuario (@PathVariable String id){
 		Optional<Usuario> usuario = usuarioService.consultarUsuarioPorId(id);
 		if(!usuario.isPresent()) {
 			return ResponseEntity.notFound().build();

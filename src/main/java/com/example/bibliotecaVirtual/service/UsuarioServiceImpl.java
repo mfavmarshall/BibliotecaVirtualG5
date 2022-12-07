@@ -21,8 +21,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public Optional<Usuario> consultarUsuarioPorId(Long id) {
-		return usuarioRepository.findById(id);
+	public Optional<Usuario> consultarUsuarioPorId(String id) {
+		if(id == null) {
+			return null;
+		}else {
+			return usuarioRepository.findById(id);
+		}
 	}
 
 	@Override
@@ -36,9 +40,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
-	public void eliminarUsuario(Long id) {
+	public void eliminarUsuario(String id) {
 		usuarioRepository.deleteById(id);
-
 	}
 
 }
