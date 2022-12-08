@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h4>{{mensaje}}</h4>
+        <h4 >{{mensaje}}</h4>
     </div>
         <div class="row">
             <ul class="nav">

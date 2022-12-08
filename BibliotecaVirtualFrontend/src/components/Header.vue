@@ -8,9 +8,7 @@
 <script>
 export default {
     data() {
-        return {
-            titulo: "Biblioteca Virtual",
-        }
+        return {}
     }
 }
 </script>
