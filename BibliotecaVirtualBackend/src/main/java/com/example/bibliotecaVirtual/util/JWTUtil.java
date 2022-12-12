@@ -22,7 +22,7 @@ public class JWTUtil {
 				.setSubject(nombreUsuario)
 				.claim("authorities", autoridadesacepatadas.stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis()+30000))
+				.setExpiration(new Date(System.currentTimeMillis()+300000000))
 				.signWith(SignatureAlgorithm.HS512, SECRETKEY.getBytes())
 				.compact();
 		return jwt;

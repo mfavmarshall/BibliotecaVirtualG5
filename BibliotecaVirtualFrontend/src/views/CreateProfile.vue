@@ -13,8 +13,8 @@
             <label for="email" class="form-label">Correo electrónico</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo electrónico" />
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
-        <button class="btn btn-danger">Eliminar cuenta</button>
+        <button type="submit" class="btn btn-primary">Crear cuenta</button>
+        <button class="btn btn-secondary">Atrás</button>
     </form>
 </template>
 

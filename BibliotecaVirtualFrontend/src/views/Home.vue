@@ -24,8 +24,10 @@ export default {
   data() {
     return {
       mensaje: "Bienvenido a tu biblioteca virtual",
+      vtoken:''
     };
   },
+  props: ['token'],
 };
 </script>
 
