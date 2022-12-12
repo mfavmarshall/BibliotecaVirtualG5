@@ -16,31 +16,27 @@
             <button @click="iniciarSesion" class="btn btn-primary">
                 Iniciar sesión
             </button>
-            <button class="btn btn-secondary">Registrarse</button>
+            <RouterLink class="btn btn-secondary" to="/createprofile">Registrarse</RouterLink>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    props: ['token'],
 
     data() {
         return {
             bienvenida: "Por favor inicia sesion o crea tu cuenta",
             usuario: "",
-            contrasena: ""
+            contrasena: "",
         };
     },
     methods: {
         iniciarSesion() {
-            let login = {
-                nombreUsuario: this.usuario,
-                contrasenaUsuario: this.contrasena,
-            };
 
-            if (this.usuario == "" || this.contrasena == "") {
+            if (this.vusuario == "" || this.vcontrasena == "") {
                 alert("Los campos usuario y contraseña con obligatorios");
+                return
             }
 
             const opciones = {
@@ -48,7 +44,10 @@ export default {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(login),
+                body: JSON.stringify({
+                    nombreUsuario: this.usuario,
+                    contrasenaUsuario: this.contrasena,
+                }),
             };
             const url = "http://150.136.97.54:8080/bibliotecavirtual/api/token";
 
@@ -58,13 +57,15 @@ export default {
                         return response.json();
                     } else {
                         const error = new Error(response.statusText);
-                        error.jason = response.json();
+                        error.json = response.json();
                         console.log(error.message);
                         throw error;
                     }
                 })
                 .then((data) => {
-                    this.$emit('token',data.token)
+                    // console.log(data)
+                    sessionStorage.setItem("lusuario", this.usuario)
+                    sessionStorage.setItem("lcontrasena", this.contrasena)
                     this.$router.push({
                         name:'home'
                     })

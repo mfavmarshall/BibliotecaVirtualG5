@@ -13,7 +13,7 @@
     </ul>
   </div>
   <div>
-    <button class="btn btn-danger">Cerrar sesión</button>
+    <button @click="logout" class="btn btn-danger">Cerrar sesión</button>
   </div>
 </template>
 
@@ -24,10 +24,15 @@ export default {
   data() {
     return {
       mensaje: "Bienvenido a tu biblioteca virtual",
-      vtoken:''
     };
   },
-  props: ['token'],
+  methods: {
+    logout() {
+      sessionStorage.removeItem("lusuario")
+      sessionStorage.removeItem("lcontrasena")
+      this.$router.push({name: 'login'})
+    }
+  }
 };
 </script>
 

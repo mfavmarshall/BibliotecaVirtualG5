@@ -41,7 +41,7 @@ public class BibliotecaVirtualApplication extends SpringBootServletInitializer {
            .authorizeRequests()
            .antMatchers(HttpMethod.POST,"/api/token").permitAll()
            .antMatchers(HttpMethod.POST,"/api/usuarios").permitAll()
-           .antMatchers(HttpMethod.GET,"/api/usuarios").hasAuthority("admin")
+           //.antMatchers(HttpMethod.GET,"/api/usuarios").hasAuthority("admin")
            .anyRequest().authenticated()
            .and().csrf().disable().cors().configurationSource(request -> configuration);
         }

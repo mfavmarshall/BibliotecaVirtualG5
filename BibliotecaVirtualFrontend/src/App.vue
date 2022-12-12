@@ -2,7 +2,7 @@
         <div>
             <Header />
             <div class="row">
-            <RouterView :token="token" @token="updateToken"/>
+                <RouterView />
             </div>
             <Footer />
         </div>
@@ -15,16 +15,9 @@ import Footer from './components/Footer.vue';
 
 export default {
     data() {
-        return {
-            token: ''
-        }
+        return {}
     },
     components: {Header, Footer},
-    methods: {
-        updateToken(token){
-            this.token=token
-        }
-    }
 }
 </script>
 
